@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Data Mining Course Project</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+
+
+
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h1><a name='header-n0' class='md-header-anchor '></a>Data Mining Course Project</h1><h3><a name='header-n2' class='md-header-anchor '></a>Contents</h3><blockquote><p><a href='#header-undefined'>Project Introduction</a></p></blockquote><blockquote><p><a href='#header-undefined'>Project Report</a></p></blockquote><blockquote><p><a href='#header-undefined'>Project Background</a></p></blockquote><blockquote><p><a href='#header-undefined'>Dataset</a></p></blockquote><blockquote><p><a href='#header-undefined'>Environment Configuration</a></p></blockquote><blockquote><p><a href='#Task%201'>Task 1: Regression based stock price prediction</a></p></blockquote><blockquote><p><a href='#Task%202'>Task 2: Feature Generation</a></p></blockquote><blockquote><p><a href='#Task%203'>Task 3: Trading strategy based on reinforcement learning</a></p></blockquote><blockquote><p><a href='#header-undefined'>Academic misconduct and handling</a></p></blockquote><blockquote><p><a href='#Questions'>Questions</a></p></blockquote><h2 id="Project Introduction">Project Introduction</h2><p>This project is meant to practice your ability of handling actual business problems about financial transaction. It is composed of 3 tasks involving supervised learning, unsupervised learning and reinforcement learning. </p><p>This is a group project, preferably 3 people per group. At the end of the report (Appendix section), you should describe the contributions of each member in the group. After you decide your group members and leader, please add a group in &quot;People&quot; section of our course website, invite your teammates, and  design a group name for yourselves (with team number in the beginning. Eg. 1. Avatars).</p><p>This project is divided into 2 stages. In the first stage, you should understand the problem background and solve the first task. The due date is May 1, 11:59 pm. You do not need to write a report, just submit your progress and problems encountered). In the second stage, you should try and solve the second task and the third task. The due date is June 16, 11:59 pm. You should submit a report for the whole project and your executable source code (you should explain the configuration of your environment and key dependence libraries in report). </p><p>You should submit a .zip/.rar file (naming it &quot;&lt; team number &gt; _201903_&lt; DM Project 1&gt; &quot;) with all source code and the report to Piazza (Do not submit dataset).</p><p>You can find piazza on our <a href='https://oc.sjtu.edu.cn/login/canvas'>course website</a>, please login in with your jaccount and register for piazza. If you have any problems with accessing the course website and piazza, feel free to contact TAs in class WeChat group. If you have any problems with the project or class content, you can post your questions on piazza for discussion and answer.</p><h2 id="Project Report">Project Report</h2><p>In the final project report, you should describe the three tasks separately. For each task, description of the environment configuration, solution, and test results must be included. In environment configuration part, you should describe the software language, key libraries, and other things necessary to run the program. In solution part, you should explain what kind of problems are encountered and how to solve them. In test results part, you should display the actual results of the program and analyze them. Additionally, the contribution of the team members should be described in the appendix section of the report.</p><h2 id="Project Background">Project Background</h2><p>The business problems of this assignment are derived from financial transactions. Financial transactions are the process of converting asset classes in the market. The purpose of financial transactions is to preserve and increase the value of assets, but improper transactions will suffer loss. There is a class of assets that naturally hold income, such as deposits and bonds. This type of assets is not involved in this project. What is considered in this project is those assets which has no income during the holding period, the profits and losses are only caused by price changes, and trading is the only transaction method. To conclude, the transaction in this project is an attempt to &quot;buy low and sell high&quot;.</p><p>&quot;Buying low and selling high&quot; is challenging. Both low and high are relative to the future. In essence, this problem needs to grasp the regularity of the market and predict the future. However, the question whether there is regularity in market is in a long-term debate among market researchers. Among them, the famous claims include technical analysis theory, value investment theory, random walk theory, modern asset portfolio theory, effective market hypothesis and behavioral finance. Some claims are completely affirmative, such as technical analysis. Some are completely negative, such as random walks. Even with empirical evidence, there are still many different opinions. Most active fund income cannot exceed passive  fund income, but there also exist active fund maintaining excess returns for a long time. This project has a relatively positive view of this issue. All three tasks are trying to find a statistically significant method, making unbiased judgments, and buying and selling.</p><p>In order to facilitate the understanding of data and tasks for students who have not touched the transaction, we  will briefly introduce the market structure and trading operations in the following part. Students who are familiar with transaction can skip this part.</p><p><img src='./pic1.png' alt='Typical Software Trading Interface' referrerPolicy='no-referrer' /></p><center>Fig.1 Typical Software Trading Interface</center><p>Fig.1 is a typical software trading interface showing market trading information. The white line in the middle of the picture is the historical information of the price per minute, and the yellow bar below is the trading volume per minute. The upper right part is the unfilled declaration order at the current moment. The middle right part is the statistical information of the market. The lower right part is the information of the latest deal order.</p><p>During the market opening period, continuous bidding is adopted, and the transaction rules are generally “price priority, time priority”. The specific measures are as follows: for each sale and purchase order declared, if the purchase price is greater than or equal to the sale price of the unfilled declaration, or the sale price is less than or equal to the purchase price of the unfilled declaration, then the sale price or purchase price is already reported. Otherwise, it can become an unfilled declaration order waiting for a transaction, also known as a pending order. Pending orders can be maintained throughout the trading day.</p><p><img src='./pic2.png' alt='Unfilled Pending Order' referrerPolicy='no-referrer' /></p><center>Fig.2 Unfilled Pending Order</center><p>We can take Fig.2 as an example to specify the order commission. In the figure, &quot;sell one (卖一)&quot; to &quot;sell five (卖五)&quot; refers to the five cheapest price of sold pending orders, and each price is one stall. The first column of data refers to the price of the sold pending order of each stall, the unit is the yuan, the second column of data is the number of sold pending orders of each stall, the unit is the hand. &quot;buy one (买一)&quot; to &quot;buy five (买五)&quot; refers to the five most expensive purchased pending orders, others are similar. If a new purchase is made at this time, the price is 12.99 and the quantity is 1000. Since &quot;sell one&quot; is 13.00, no transaction for the purchase, but the number of &quot;buy one&quot; will rise to 4268. If a new purchase is made at this time, the price is 13.00 and the quantity is 1000. Then the buy-in will be sold, the trading volume is 1000 (different exchanges may be different, some exchanges calculate bilaterally, that is, the volume is 2000), and the number of &quot;sell one&quot; will drop to 14667. If a new purchase is made at this time, the price is 13.01 and the quantity is 1000. Then the buy-in will be sold, but the transaction price is 13.00, the number of &quot;sell one&quot; will drop to 14667, but the &quot;sell two&quot; will not change. If a new purchase is made at this time, the price is 13.00 and the quantity is 20000. Then the purchase will be partially sold, the volume will be 15667, and the stall will change. The original &quot;sell two&quot; becomes the current &quot;sell one&quot;, the price and quantity remain unchanged. The original &quot;sell three&quot; become the current &quot;sell two&quot;, the price and quantity remain unchanged, others are similar. The current &quot;buy one&quot; will have price 13.00 and volume 4333. The original &quot;buy one&quot; becomes the current &quot;buy two&quot;, the price and quantity remain unchanged. The original &quot;sell three&quot; become the current &quot;sell two&quot;, the price and quantity remain unchanged, others are similar.</p><p>When buying in, the direction of selling is called the counterpart, and vice versa. After the purchase is made, the position is increased, and after the sale is made, the position is reduced. When the position number is positive, it holds long positions, and when the position number is negative, it holds short positions.</p><p>When the market transaction is closed, the handling fee is removed. If the average price of purchased orders is less than the sold orders, there exists profits, and this is the ultimate goal of the following tasks of this project. But the following datasets and tasks will package and simplify the specific financial data and business, making it a pure mathematical problem. When solving problems, you may not have extensive experience in financial business, but follow the task guidelines. But if you want to achieve better results, you need to understand the data and logic behind it.</p><h2 id="Dataset">Dataset</h2><p>The dataset includes the raw data and the provided features. The raw data is the public data pushed by the market, and each tick pushes a group. The following data is provided:</p><ol start='' ><li>InstrumentID (contract name)</li><li>TradingDay (transaction date)</li><li>UpdateTime (update time-stamp)</li><li>UpdateMillisec (updated millisecond time-stamp)</li><li>LastPrice (the price of the last transaction)</li><li>Volume (accumulated volume during the trading day)</li><li>LastVolume (volume after the last push of data)</li><li>Turnover (accumulated transaction amount during 
+the trading day)</li><li>LastTurnover (the amount of the transaction after the last push of the data)</li><li>AskPrice5 (price for selling stall 5)</li><li>AskPrice4 (price for selling stall 4)</li><li>AskPrice3 (price for selling stall 3)</li><li>AskPrice2 (price for selling stall 2)</li><li>AskPrice1 (price for selling stall 1)</li><li>BidPrice1 (price for buying stall 1)</li><li>BidPrice2 (price for buying stall 2)</li><li>BidPrice3 (price for buying stall 3)</li><li>BidPrice4 (price for buying stall 4)</li><li>BidPrice5 (price for buying stall 5)</li><li>AskVolume5 (volume of 5 selling stall 5)</li><li>AskVolume4 (volume of 5 selling stall 4)</li><li>AskVolume3 (volume of 5 selling stall 3)</li><li>AskVolume2 (volume of 5 selling stall 2)</li><li>AskVolume1 (volume of 5 selling stall 1)</li><li>BidVolume1 (volume of 5 buying stall 1)</li><li>BidVolume2 (volume of 5 buying stall 2)</li><li>BidVolume3 (volume of 5 buying stall 3)</li><li>BidVolume4 (volume of 5 buying stall 4)</li><li>BidVolume5 (volume of 5 buying stall 5)</li><li>OpenInterest (Contract opening quantity)</li><li>UpperLimitPrice (limit-up price)</li><li>LowerLimitPrice (limit-down price)</li></ol><h2 id="Environment Configuration">Environment Configuration</h2><p>It is recommended to perform tasks in Python environment. You should install necessary libraries and process the datasets. Try to use parallel computing, whether you use CPU or GPU.</p><p>All tasks do not limit the models and methods to be used. For beginners, you can start with the installation of <a href='https://www.anaconda.com/'>anaconda</a> and build a basic Python environment. At the same time, <a href='https://scikit-learn.org/stable/index.html'>scikit-learn</a> is installed by default in anaconda, which has basic models and algorithms. <a href='http://www.numpy.org/'>Numpy</a> and <a href='http://pandas.pydata.org/'>Pandas</a> are mainstream tools for algorithm implementation and data processing. Numpy supports accelerated vector operations, which is more efficient than using a &#39;for&#39; loop in Python. If you want to try a neural network, you can configure <a href='https://www.tensorflow.org/'>tensorflow</a>, which has a CPU version and a GPU version. There are also many environment management tools, &#39;conda&#39; on anaconda, git on github and pip.</p><p>It is recommended that you do not implement the algorithm yourself if you have a ready-made algorithm implementation and library. Implementing algorithms is not the main task of this project.</p><h2 id="Task 1">Task 1:  Regression based stock price prediction</h2><p>This task involves supervise learning. The basic requirement is to learn a certain model and do regression according to the features and labels in the dataset. The label equals (the future n-th tick&#39;s AskPrice1 + the future n-th tick&#39;s BidPrice1 - the current tick&#39;s AskPrice1 - the current tick&#39;s BidPrice1) / 2, the value of n can be customized. Regression method is not limited to least square method, other methods (such as ensemble learning) and other evaluation criteria can be used. In the end, you should report your methods&#39; final results, with the predicted values on the testing set.</p><p>This project will be evaluated according to the difference between your predicted results and true values. Tail value will be assigned with higher weight (you should make accurate prediction in the long run). Complex models not necessarily guarantee better results, because financial transaction problems depend on the problem itself and the size of the dataset.</p><p>Here are a few typical models and algorithms for reference:</p><ol start='' ><li>Random Forest</li><li>Gradient Boosting Decision Tree</li><li>Adaboost</li><li>Deep Neural Network</li><li>Convolutional Neural Network</li><li>Long and Short-Term Memory</li></ol><h2 id="Task 2">Task 2: Feature Generation</h2><p>This task involves unsupervised learning to generate effective features using algorithms. Task 2 requires you to add generated features to the model of task 1, and test whether the model performance is improved in testing set.</p><p>Here are a few typical models and algorithms for reference:</p><ol start='' ><li>Simple methods such as addition, subtraction, multiplication, and polynomial combinations. Mathematical tools in signal processing such as
+WT (wavelet transform).</li><li><a href='https://www.featuretools.com/'>Deep Feature Synthesis</a>.</li><li><a href='https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0180944'>Stacked Auto Encoder</a>. A deep learning framework for financial time series using stacked auto-encoders and long-short term memory</li></ol><h2 id="Task 3">Task 3: Trading strategy based on reinforcement learning</h2><p>This task involves reinforcement learning and will no longer use the tags in task 1. To simplify the problem, this task sets that each tick has at most 5 hand long positions and 5 hand short positions. Long positions and short positions cannot be held at the same time. A tick can only have one action at a time. Positions can be increased or decreased (with unit equals one hand) through buying and selling, and the absolute value of change in the number of positions of one action cannot exceed one hand. The current state can be maintained by an idle action. When the buying action is executed, the purchase will be successful and will not have any impact on the market. The price is AskPrice1 of the current tick. When the selling action is executed, the sell will be successful and will have no effect on the market. The price is BidPrice1 of the current tick. Finally, you should include in your report: the number of buying and spelling on testing set, the average price to buy and the average price to sell. Besides, attach action selection for each tick on testing set for submission.</p><p>Here are a few typical models and algorithms for reference:</p><ol start='' ><li><a href='http://www.cslt.org/mediawiki/images/a/aa/07407387.pdf'>Deep Direct Reinforcement Learning for Financial Signal Representation and Trading</a>.</li><li><a href='https://arxiv.org/pdf/1707.07338.pdf'>Agent Inspired Trading Using Recurrent Reinforcement Learning and LSTM Neural Networks</a>.</li></ol><p>&nbsp;</p><h2 id="Academic misconduct and handling">Academic misconduct and handling</h2><p>This project has tools to analyze the plagiarism of source code and reports, and don&#39;t try to test its reliability. For self-completed team, there will be reward points. For plagiarized team, it will be awarded zero points. If you are convicted of plagiarism, you can ask TAs to make a defense.</p><h2 id="Questions">Questions?</h2><p>First, Google or Baidu it. It’s a good habit to use the Internet to answer your questions. For 99% of all questions, the answer is easier found online than asking us. Also make sure to check out the helper resources we have linked above. If you can’t figure it out this way, post your question on Piazza (preferably
+public question rather than a private one, so that everyone can benefit from the given answer) or contact us through WeChat.</p><p>&nbsp;</p></div>
+</body>
+</html>
